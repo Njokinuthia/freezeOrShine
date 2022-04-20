@@ -1,0 +1,62 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "coord": {
+        "lon": -0.1257,
+        "lat": 51.5085
+      },
+      "weather": [
+        {
+          "id": 803,
+          "main": "Clouds",
+          "description": "broken clouds",
+          "icon": "04d"
+        }
+      ],
+      "base": "stations",
+      "main": {
+        "temp": 17.13,
+        "feels_like": 15.86,
+        "temp_min": 15.32,
+        "temp_max": 18.88,
+        "pressure": 1015,
+        "humidity": 37
+      },
+      "visibility": 10000,
+      "wind": {
+        "speed": 7.72,
+        "deg": 90
+      },
+      "clouds": {
+        "all": 65
+      },
+      "dt": 1650468218,
+      "sys": {
+        "type": 2,
+        "id": 268730,
+        "country": "GB",
+        "sunrise": 1650430457,
+        "sunset": 1650481452
+      },
+      "timezone": 3600,
+      "id": 2643743,
+      "name": "London",
+      "cod": 200
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
