@@ -5,6 +5,9 @@ const form = document.querySelector("form")
 
 const time = document.getElementById("time");
 const date = document.getElementById("date")
+const detailedDay = document.getElementById("day")
+
+
 
 const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]
 const yearMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
@@ -23,8 +26,6 @@ button.addEventListener("click", (e) => {
 })
 
 
-
-
 // date function
 function dateDetails() {
   const today = new Date();
@@ -34,6 +35,8 @@ function dateDetails() {
   const timeNow = today.getHours() + ":" + today.getMinutes();
   time.innerHTML = `${timeNow} hrs`
   date.innerHTML = weekDays[day] + ", " + dateNow + " " + yearMonths[monthNow]
+  detailedDay.innerHTML = weekDays[day] + ", " + dateNow + " " + yearMonths[monthNow]
+  
 }
 
 
@@ -52,7 +55,7 @@ function getCoordinates(cityName) {
           console.log(weatherInfo)
           displayWeather(weatherInfo)
           form.reset();
-          document.body.style.backgroundImage = "url(https://source.unsplash.com/1600x900/?" + weatherInfo.weather[0].main + ")"
+          document.body.style.backgroundImage = "url(https://source.unsplash.com/1600x900/?" + weatherInfo.current.weather[0].main + ")"
         })
         .catch((err) => alert(err.message))
     })
@@ -60,32 +63,26 @@ function getCoordinates(cityName) {
 };
 
 
-// const fetchWeatherData = (lat, lon) => {
-//   fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude={part}&appid=" + apiKey + "&units=metric")
-//     .then(resp => resp.json())
-//     .then(weatherInfo => {
-//       console.log(weatherInfo)
-//       displayWeather(weatherInfo)
-//       form.reset();
-//       document.body.style.backgroundImage = "url(https://source.unsplash.com/1600x900/?" + weatherInfo.weather[0].main + ")"
-//     })
-//     .catch((err) => alert(err.message))
-// }
-
-
 // display weather
 function displayWeather(weatherInfo) {
-  console.log(weatherInfo.current.weather)
+  console.log(weatherInfo.daily)
   console.log(weatherInfo.current.weather[0].main)
 
-  document.querySelector(".name").innerHTML = city.Value;
-  document.querySelector(".desc").innerHTML = `${weatherInfo.current.weather[0].main}`;
-  document.querySelector(".temp").innerHTML = `${weatherInfo.current.temp}°C`;
-  document.querySelector(".weather-icon").src = "https://openweathermap.org/img/wn/" + weatherInfo.current.weather[0].icon + "@2x.png";
+  document.getElementById("displayToday").innerHTML = `
+    <h4 class="name text-center">${city.value}:</h4>
+    <div class="d-flex align-items-center">
+      <img src="${"https://openweathermap.org/img/wn/" + weatherInfo.current.weather[0].icon + "@2x.png"}" alt="" class="weather-icon">
+      <h4 class="desc">${weatherInfo.current.weather[0].main}:</h4>
+    </div>
+    <h4 class="temp">${weatherInfo.current.temp} °C</h4>`
 
-  // document.querySelector(".humidity").innerHTML = `Humidity: ${weatherInfo.main.humidity}%`
-  // document.querySelector(".pressure").innerHTML = `Pressure: ${weatherInfo.main.pressure}`
-  // document.querySelector(".wind").innerHTML = `Wind: ${weatherInfo.wind.speed}km/h`
+
+  document.querySelector("#detailedIcon").src = `https://openweathermap.org/img/wn/${weatherInfo.current.weather[0].icon}@2x.png`
+  document.querySelector("#desc").innerHTML = `${weatherInfo.current.weather[0].description}`
+  document.querySelector("#temp").innerHTML = `${weatherInfo.current.temp} °C`  
+  document.querySelector("#humidity").innerHTML = `Humidity: ${weatherInfo.current.humidity}%`
+  document.querySelector("#pressure").innerHTML = `Pressure: ${weatherInfo.current.pressure}`
+  document.querySelector("#wind").innerHTML = `Wind: ${weatherInfo.current.wind_speed}km/h`
 }
 
 

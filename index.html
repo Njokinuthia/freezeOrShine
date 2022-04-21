@@ -26,7 +26,7 @@
     <div class="container mt-4 pt-4 ">
       <!--day/time details -->
       <div class="dayDetails d-flex justify-content-between">
-        <div id="date">
+        <div class="date" id="date">
           <h3>Thur, 21 April</h3>
         </div>
         <div id="time">
@@ -41,77 +41,37 @@
         </form>
       </div>
       <!-- current weather -->
-      <div class="display">
-        <div class="d-flex align-items-center justify-content-between">
-          <h4 class="name text-center">City:</h4>
+      <div class="display" >
+        <div class="d-flex align-items-center justify-content-between" id="displayToday">
+          <!-- <h4 class="name text-center">City:</h4>
           <div class="d-flex align-items-center">
             <img src="" alt="" class="weather-icon">
             <h4 class="desc">Conditon:</h4>
           </div>
-          <h4 class="temp">Temp:</h4>
+          <h4 class="temp">Temp:</h4> -->
         </div>
       </div>
     </div>
   </div>
 
-  <!-- section3:full week details -->
+  <!-- section3:full details -->
   <div class="fullWeekDetails d-flex justify-content-start align-items-center ">
     <!-- today details -->
     <div class="today weather-details d-flex justify-content-center align-items-center">
       <div>
-        <h4 class="day">Mon</h4>
-        <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="weather-icon" class="weather-icon">
+        <h4 class="date" id="day">day</h4>
+        <img src="" alt="weather-icon" id="detailedIcon">
       </div>
       <div>
-        <h4 class="desc">Condition:</h4>
-        <h4 class="temp">Temp:</h4>
-        <h4 class="humidity">Humidity:</h4>
-        <h4 class="pressure">Pressure:</h4>
-        <h4 class="wind">Wind Speed:</h4>
+        <h3>Full Descrition:</h3>
+        <h4 id="desc">Condition:</h4>
+        <h4 id="temp">Temp:</h4>
+        <h4 id="humidity">Humidity:</h4>
+        <h4 id="pressure">Pressure:</h4>
+        <h4 id="wind">Wind Speed:</h4>
       </div>
 
-    </div>
-
-    <!-- future details -->
-
-    <div class="future d-flex">
-      <div class="daily">
-        <h4 class="day">Tue</h4>
-        <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="weather-icon" class="weather-icon">
-        <h4 class="desc">Condition:</h4>
-        <h4 class="temp">Temp:</h4>
-      </div>
-      <div class="daily">
-        <h4 class="day">Wed</h4>
-        <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="weather-icon" class="weather-icon">
-        <h4 class="desc">Condition:</h4>
-        <h4 class="temp">Temp:</h4>
-      </div>
-      <div class="daily">
-        <h4 class="day">Thur</h4>
-        <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="weather-icon" class="weather-icon">
-        <h4 class="desc">Condition:</h4>
-        <h4 class="temp">Temp:</h4>
-      </div>
-      <div class="daily">
-        <h4 class="day">Fri</h4>
-        <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="weather-icon" class="weather-icon">
-        <h4 class="desc">Condition:</h4>
-        <h4 class="temp">Temp:</h4>
-      </div>
-      <div class="daily">
-        <h4 class="day">Sat</h4>
-        <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="weather-icon" class="weather-icon">
-        <h4 class="desc">Condition:</h4>
-        <h4 class="temp">Temp:</h4>
-      </div>
-      <div class="daily">
-        <h4 class="day">Sun</h4>
-        <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="weather-icon" class="weather-icon">
-        <h4 class="desc">Condition:</h4>
-        <h4 class="temp">Temp:</h4>
-      </div>
-    </div>
+    </div>     
 
   </div>
 
