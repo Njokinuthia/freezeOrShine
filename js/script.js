@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
 button.addEventListener("click", (e) => {
   e.preventDefault();
   getCoordinates(city.value);
-  // fetchWeatherData(city.value, apiKey)
 })
 
 
@@ -38,36 +37,56 @@ function dateDetails() {
 }
 
 
-// using One Call api
-// get latitude and longitude
-
+// Fetch weather data
 function getCoordinates(cityName) {
-  fetch("http://api.openweathermap.org/geo/1.0/direct?q="+cityName+"&appid="+apiKey)
+  fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&appid=" + apiKey)
     .then(resp => resp.json())
     .then(locationInfo => {
-      console.log(locationInfo)
-      const latitude = locationInfo[0].lat
-      const longitude = locationInfo[0].lon      
+      // console.log(locationInfo)
+      const lat = locationInfo[0].lat
+      const lon = locationInfo[0].lon
+
+      fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude={part}&appid=" + apiKey + "&units=metric")
+        .then(resp => resp.json())
+        .then(weatherInfo => {
+          console.log(weatherInfo)
+          displayWeather(weatherInfo)
+          form.reset();
+          document.body.style.backgroundImage = "url(https://source.unsplash.com/1600x900/?" + weatherInfo.weather[0].main + ")"
+        })
+        .catch((err) => alert(err.message))
     })
-    .catch(err=>alert(err.message))
-
-  
-
+    .catch(err => alert(err.message))
 };
 
 
-
-// const fetchWeatherData = (city, apiKey) => {
-//   fetch("https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=" + apiKey + "&units=metric")
+// const fetchWeatherData = (lat, lon) => {
+//   fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude={part}&appid=" + apiKey + "&units=metric")
 //     .then(resp => resp.json())
 //     .then(weatherInfo => {
+//       console.log(weatherInfo)
 //       displayWeather(weatherInfo)
 //       form.reset();
-
 //       document.body.style.backgroundImage = "url(https://source.unsplash.com/1600x900/?" + weatherInfo.weather[0].main + ")"
 //     })
 //     .catch((err) => alert(err.message))
 // }
+
+
+// display weather
+function displayWeather(weatherInfo) {
+  console.log(weatherInfo.current.weather)
+  console.log(weatherInfo.current.weather[0].main)
+
+  document.querySelector(".name").innerHTML = city.Value;
+  document.querySelector(".desc").innerHTML = `${weatherInfo.current.weather[0].main}`;
+  document.querySelector(".temp").innerHTML = `${weatherInfo.current.temp}°C`;
+  document.querySelector(".weather-icon").src = "https://openweathermap.org/img/wn/" + weatherInfo.current.weather[0].icon + "@2x.png";
+
+  // document.querySelector(".humidity").innerHTML = `Humidity: ${weatherInfo.main.humidity}%`
+  // document.querySelector(".pressure").innerHTML = `Pressure: ${weatherInfo.main.pressure}`
+  // document.querySelector(".wind").innerHTML = `Wind: ${weatherInfo.wind.speed}km/h`
+}
 
 
 
@@ -114,4 +133,3 @@ function getCoordinates(cityName) {
 //   document.querySelector(".wind").innerHTML = `Wind: ${weatherInfo.wind.speed}km/h`
 // }
 
-// // hide on search
