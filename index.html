@@ -21,54 +21,51 @@
     </div>
   </div>
 
-<div class="">
-  <!-- section2:search details -->
-  <div class="d-flex justify-content-center align-items-center">
-    <div class="hideheight container mt-4 pt-4 ">
-      <!--day/time details -->
-      <div class="dayDetails d-flex justify-content-between">
-        <div class="date" id="date">
-          <h3>day,date</h3>
+  <div class="">
+    <!-- section2:search details -->
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="hideheight container mt-4 pt-4 ">
+        <!--day/time details -->
+        <div class="dayDetails d-flex justify-content-between">
+          <div class="date" id="date">
+            <h3>day,date</h3>
+          </div>
+          <div id="time">
+            <h3>0000hrs</h3>
+          </div>
         </div>
-        <div id="time">
-          <h3>0000hrs</h3>
+        <!-- input -->
+        <div class="input my-3 ">
+          <form class="d-flex justify-content-between" action="#">
+            <input type="text" class="cityInput" placeholder="Enter a city">
+            <input type="submit" value="search" class="button">
+          </form>
         </div>
-      </div>
-      <!-- input -->
-      <div class="input my-3 ">
-        <form class="d-flex justify-content-between" action="#">
-          <input type="text" class="cityInput" placeholder="Enter a city">
-          <input type="submit" value="search" class="button">
-        </form>
-      </div>
-      <!-- current weather -->
-      <div class="display" >
-        <div class="d-flex align-items-center justify-content-between" id="displayToday">          
+        <!-- current weather -->
+        <div class="display">
+          <div class="d-flex align-items-center justify-content-between" id="displayToday">
+          </div>
         </div>
-      </div>
 
-      <div class="details d-flex align-items-center justify-content-between"> 
-        <h3>Weather<br>Details:</h3>
-        <div>
-          <h4 id="desc">Condition:</h4>
-          <h4 id="temp">Temp:</h4>
-          <h4 id="humidity">Humidity:</h4>
+        <div class="details d-flex align-items-center justify-content-between">
+          <h3>Weather<br>Details:</h3>
+          <div>
+            <h4 id="desc">Condition:</h4>
+            <h4 id="temp">Temp:</h4>
+            <h4 id="humidity">Humidity:</h4>
+          </div>
+          <div>
+            <h4 id="pressure">Pressure:</h4>
+            <h4 id="wind">Wind Speed:</h4>
+          </div>
         </div>
-        <div>
-          <h4 id="pressure">Pressure:</h4>
-          <h4 id="wind">Wind Speed:</h4>
+
+        <div class="text-center fulldate">
+          <h4 class="date" id="day">day</h4>
         </div>
-        
       </div>
-
-      <div class="text-center fulldate">
-        <h4 class="date" id="day">day</h4>        
-      </div>  
-
     </div>
-  </div>  
-
-</div>
+  </div>
 </body>
 
 </html>
