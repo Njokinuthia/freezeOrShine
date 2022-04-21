@@ -3,6 +3,23 @@ const city = document.querySelector("input.cityInput")
 const button = document.querySelector("input.button")
 const form = document.querySelector("form")
 
+const time = document.getElementById("time");
+const date = document.getElementById("date")
+
+const weekDays = ["Sun","Mon","Tue","Wed","Thur","Fri","Sat"]
+const yearMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"]
+
+function dateDetails(){
+  const today = new Date();
+
+  const day = today.getDay();
+  const dateNow = today.getDate();
+  const monthNow = today.getMonth();  
+  const timeNow = today.getHours()+""+today.getMinutes();  
+  time.innerHTML =`${timeNow}hrs`
+  date.innerHTML = weekDays[day] +", "+ dateNow + " " + yearMonths[monthNow]
+}
+dateDetails();
 
 // weather app api key
 const apiKey = `28d519b791ec96557c38884a192d1bc7`;
