@@ -23,6 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
 button.addEventListener("click", (e) => {
   e.preventDefault();
   getCoordinates(city.value);
+  document.querySelector(".display").classList.remove("display")
+  document.querySelector(".details").classList.remove("details")
+  document.querySelector(".hideheight").classList.remove("hideheight")
+
+
 })
 
 
@@ -35,8 +40,8 @@ function dateDetails() {
   const timeNow = today.getHours() + ":" + today.getMinutes();
   time.innerHTML = `${timeNow} hrs`
   date.innerHTML = weekDays[day] + ", " + dateNow + " " + yearMonths[monthNow]
-  detailedDay.innerHTML = weekDays[day] + ", " + dateNow + " " + yearMonths[monthNow]
-  
+  detailedDay.innerHTML = today
+
 }
 
 
@@ -69,17 +74,17 @@ function displayWeather(weatherInfo) {
   console.log(weatherInfo.current.weather[0].main)
 
   document.getElementById("displayToday").innerHTML = `
-    <h4 class="name text-center">${city.value}:</h4>
+    <h1 class="name text-center">${city.value}</h1>
     <div class="d-flex align-items-center">
       <img src="${"https://openweathermap.org/img/wn/" + weatherInfo.current.weather[0].icon + "@2x.png"}" alt="" class="weather-icon">
-      <h4 class="desc">${weatherInfo.current.weather[0].main}:</h4>
+      <h1 class="desc">${weatherInfo.current.weather[0].main}</h1>
     </div>
-    <h4 class="temp">${weatherInfo.current.temp} °C</h4>`
+    <h1 class="temp">${weatherInfo.current.temp} °C</h1>`
 
 
-  document.querySelector("#detailedIcon").src = `https://openweathermap.org/img/wn/${weatherInfo.current.weather[0].icon}@2x.png`
+
   document.querySelector("#desc").innerHTML = `${weatherInfo.current.weather[0].description}`
-  document.querySelector("#temp").innerHTML = `${weatherInfo.current.temp} °C`  
+  document.querySelector("#temp").innerHTML = `${weatherInfo.current.temp} °C`
   document.querySelector("#humidity").innerHTML = `Humidity: ${weatherInfo.current.humidity}%`
   document.querySelector("#pressure").innerHTML = `Pressure: ${weatherInfo.current.pressure}`
   document.querySelector("#wind").innerHTML = `Wind: ${weatherInfo.current.wind_speed}km/h`
