@@ -1,5 +1,4 @@
-body {
-  /* font-family: "sofia", sans-serif; */
+body {  
   background-image: url(https://media.istockphoto.com/photos/branches-covered-with-ice-after-freezing-rain-sparkling-ice-covered-picture-id1289449088?b=1&k=20&m=1289449088&s=170667a&w=0&h=A3NqjfBFMq3UQDFcvEKoKfA9N6zJd-OJuIg05vFB4NM=);
   background-repeat: no-repeat;
   background-size: cover;
@@ -15,7 +14,6 @@ h1 {
 
 .container {
   background: rgba(0, 0, 0, 0.8);
-  /* padding: 2em; */
   border-radius: 30px;
   width: 100%;
   margin: 1em;
@@ -31,12 +29,8 @@ h1 {
   width: 90%;
   margin: auto;
   margin-top: 0;
-  margin-bottom:0
-  /* height: 10vh; */
+  margin-bottom:0  
 }
-/* .display{
-  height: 30%;
-} */
 
 .cityInput {
   width: 75%;
@@ -45,7 +39,6 @@ h1 {
   width: 20%;
 }
 
-/* TODO: STYLE JUSTIFY CONTENT */
 .fullWeekDetails {
   background: rgba(0, 0, 0, 0.8);
   color: white;
@@ -58,8 +51,7 @@ h1 {
 .today {
   width: 90%;
   margin: auto;
-  border: 1px solid black;
-  
+  border: 1px solid black;  
 }
 
 h4.day {
@@ -68,35 +60,11 @@ h4.day {
   border-radius: 10px;
   text-align: center;
 }
-
-
-
  .display,.details{
-  visibility: hidden;
-  /* max-height: 30px; */
+  visibility: hidden; 
   margin: 0;
-  margin: auto;
-  /* max-width: 50%; */
+  margin: auto; 
 }
-.hideheight {
-  /* visibility: hidden; */
+.hideheight {  
   max-height: 300px;  
 }
-/* 
-.display:after{
-  visibility: visible;
-  content: "Fetching weather....";
-  color: white;
-}  */
-/*  */
-.weather-details{
-width: 30%;
-
-}
-.weather-message{
-  width:70%;
-  margin: 0;
-  margin:auto;
-  
-
-} */
