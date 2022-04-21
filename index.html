@@ -13,43 +13,124 @@
 </head>
 
 <body>
-  <div class="d-flex justify-content-center align-items-center ">
-    <img src="assets/umbrela.svg" alt="lady with umbrella" width="60">
-    <h1 class="text-center mt-4 pt-4">Freeze or shine</h1>
+  <!--section1: page into -->
+  <div>
+    <!-- page icon / title -->
+    <div class="d-flex justify-content-center align-items-center ">
+      <img src="assets/umbrela.svg" alt="lady with umbrella" width="60">
+      <h1 class="text-center mt-4 pt-4 appname">Freeze or shine</h1>
+    </div>
+    <!-- Day details
+    <div class="dayDetails text-center">
+      <div class="day" id="today">
+        <p1>Thursday</p>
+      </div>
+      <div id="time">
+        <h3>1600hrs <span>EAT</span></h3>
+      </div>
+      <div id="date">
+        <h3>21st April 2022</h3>
+      </div>
+    </div> -->
   </div>
-  
 
-  <div class=" app-body d-flex justify-content-center align-items-center">
-  <!-- <img src="assets/umbrela.svg" alt="lady with umbrella" width="190"> -->
-    
+  <!-- section2:search details -->
+  <div class="d-flex justify-content-center align-items-center">
     <div class="container mt-4 pt-4 ">
+      <!-- input by user -->
+      <div class="dayDetails ">
+        <!-- <div class="day" id="today">
+          <p1>Thur</p>
+        </div> -->
+        <div id="time">
+          <h3>1600hrs <span></span></h3>
+        </div>
+        <div id="date">
+          <h3>Thur, 21 April</h3>
+        </div>
+      </div>
       <div class="input my-4 ">
-        <form class="d-flex align-items-center justify-content-center" action="#">
+        <form class="d-flex " action="#">
           <input type="text" class="cityInput" placeholder="Enter a city">
           <input type="submit" value="search" class="button">
         </form>
       </div>
 
+      <!-- current weather -->
       <div class="display">
-        <h1 class="name text-center">City:</h1>
         <div class="d-flex align-items-center justify-content-between">
+          <h4 class="name text-center">City:</h4>
           <div class="d-flex align-items-center">
             <img src="" alt="" class="weather-icon">
-            <h4 class="desc">Weather:</h4>
+            <h4 class="desc">Conditon:</h4>
           </div>
           <h4 class="temp">Temp:</h4>
-        </div>
-
-        <div class="text-center">
-          <h3>Weather details:</h3>
-          <h4 class="humidity">Humidity:</h4>
-          <h4 class="pressure">Pressure:</h4>
-          <h4 class="wind">Wind Speed:</h4>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- section3:full week details -->
+  <div class="fullWeekDetails d-flex justify-content-center align-items-center ">
+    <!-- today details -->
+    <div class="weather-details">
+      <h4 class="day">Mon</h4>
+      <img src="" alt="" class="weather-icon">
+      <h4 class="desc">Condition:</h4>
+      <h4 class="temp">Temp:</h4>
+      <h4 class="humidity">Humidity:</h4>
+      <h4 class="pressure">Pressure:</h4>
+      <h4 class="wind">Wind Speed:</h4>
+    </div>
+    <!-- future details -->
+    <div>
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="daily">
+          <h4 class="day">Tue</h4>
+          <img src="" alt="weather-icon" class="weather-icon">
+          <h4 class="desc">Condition:</h4>
+          <h4 class="temp">Temp:</h4>
+        </div>
+        <div class="daily">
+          <h4 class="day">Wed</h4>
+          <img src="" alt="weather-icon" class="weather-icon">
+          <h4 class="desc">Condition:</h4>
+          <h4 class="temp">Temp:</h4>
+        </div>
+        <div class="daily">
+          <h4 class="day">Thur</h4>
+          <img src="" alt="weather-icon" class="weather-icon">
+          <h4 class="desc">Condition:</h4>
+          <h4 class="temp">Temp:</h4>
+        </div>
+        <div class="daily">
+          <h4 class="day">Fri</h4>
+          <img src="" alt="weather-icon" class="weather-icon">
+          <h4 class="desc">Condition:</h4>
+          <h4 class="temp">Temp:</h4>
+        </div>
+        <div class="daily">
+          <h4 class="day">Sat</h4>
+          <img src="" alt="weather-icon" class="weather-icon">
+          <h4 class="desc">Condition:</h4>
+          <h4 class="temp">Temp:</h4>
+        </div>
+        <div class="daily">
+          <h4 class="day">Sun</h4>
+          <img src="" alt="weather-icon" class="weather-icon">
+          <h4 class="desc">Condition:</h4>
+          <h4 class="temp">Temp:</h4>
+        </div>
+      </div>
+
+    </div>
+
   </div>
+
+
+
+
+
 
 </body>
 
